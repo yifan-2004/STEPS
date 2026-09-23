@@ -10,20 +10,20 @@ STEPS revises a frozen backbone forecast after the first half of its horizon is 
 
 ## Results at a glance
 
-The table below summarizes the manuscript's full-horizon test MSE over six datasets and four horizons per backbone. Lower is better. Values are means of the **rounded manuscript table entries**, not new measurements.
+The table compares STEPS with the forecasting TTA methods reported in the manuscript: TAFAS, PETSA, and the two COSA variants (COSA-F and COSA-P). It reports full-horizon test MSE averaged over the five backbones, six datasets, and four horizons for which all methods have entries (120 cells per method). Lower is better. These are means of the **rounded manuscript table entries**, not new measurements.
 
-| Backbone | Frozen backbone | STEPS | Relative change |
-|:--|--:|--:|--:|
-| DLinear | 0.3716 | 0.2794 | −24.8% |
-| OLS | 0.3661 | 0.2753 | −24.8% |
-| PatchTST | 0.3677 | 0.2809 | −23.6% |
-| iTransformer | 0.3762 | 0.2833 | −24.7% |
-| FreTS | 0.3634 | 0.2758 | −24.1% |
-| TimeMixer | — | 0.2831 | — |
+| Method | Mean test MSE ↓ | Change vs. frozen baseline |
+|:--|--:|--:|
+| Frozen backbone | 0.3690 | — |
+| TAFAS | 0.3554 | −3.7% |
+| PETSA | 0.3554 | −3.7% |
+| COSA-F | 0.3086 | −16.4% |
+| COSA-P | 0.3183 | −13.7% |
+| STEPS | 0.2789 | −24.4% |
 
-The manuscript does not provide comparable frozen-backbone MSE entries for TimeMixer, so its baseline and relative change are omitted. The [complete 144-cell paper table](docs/RESULTS.md) and [machine-readable transcription](docs/paper_results.csv) are included. The comparison tables in the manuscript also report TAFAS, PETSA, and COSA variants; those external numbers are not redistributed here.
+The line chart shows each method's mean MSE at each forecast horizon, averaging over the same five backbones and six datasets. These published comparison values are contextual references from the manuscript's supplied comparison table; their information and adaptation protocols may differ from STEPS, so the aggregate is descriptive rather than a matched-protocol claim. The comparison excludes MICN and TimeMixer because the manuscript does not report the other methods for those backbones. See the [full 120-cell method comparison](docs/paper_tta_comparison.csv), [complete STEPS/backbone paper table](docs/RESULTS.md), and [machine-readable STEPS transcription](docs/paper_results.csv).
 
-![Mean full-horizon MSE by backbone, derived from the paper tables](assets/paper_results_summary.png)
+![Mean test MSE by forecast horizon for STEPS and comparison methods](assets/paper_tta_comparison_by_horizon.png)
 
 ![Residual structure analysis from the manuscript](assets/residual_structure_evidence.png)
 
