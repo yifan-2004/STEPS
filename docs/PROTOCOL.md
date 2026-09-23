@@ -28,4 +28,4 @@ The global rank and ridge minimize full-horizon validation MSE. The fusion coeff
 
 ## Interpretation of paper results
 
-`docs/RESULTS.md` transcribes the manuscript’s Baseline and Ours columns only. TimeMixer baseline values are absent in the manuscript comparison table. No test metric in the README is recomputed by this release package. To compare a new run, use the generated per-cell JSON rather than relying on rounded paper numbers.
+`docs/RESULTS.md` transcribes the manuscript's Baseline and Ours columns for all backbones. `docs/paper_tta_comparison.csv` separately transcribes the 120 cells for which the manuscript reports Baseline, TAFAS, PETSA, COSA-F, COSA-P, and STEPS together (five backbones, six datasets, four horizons). The published comparison methods are contextual references and may use a different adaptation or information protocol. MICN and TimeMixer are excluded from that cross-method file because comparison values are not reported for them. The README summary and plot are descriptive averages of rounded paper entries, not new measurements. To compare a new run, use the generated per-cell JSON rather than relying on rounded paper numbers.
