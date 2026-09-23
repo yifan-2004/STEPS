@@ -1,0 +1,18 @@
+{
+  "datasets": ["ETTh1", "ETTh2", "ETTm1", "ETTm2", "exchange_rate", "weather"],
+  "backbones": ["DLinear", "OLS", "PatchTST", "iTransformer", "FreTS", "TimeMixer"],
+  "horizons": [96, 192, 336, 720],
+  "lookback": "read from each cache metadata.json",
+  "observed_prefix": "horizon / 2",
+  "local": {"modes": 64, "noise": 10.0},
+  "global": {
+    "residual_record_modes": 4,
+    "history_widths": [4, 12, 24, 48, 96, 192, 336, 720, 1080],
+    "features": "MSRegime-LR",
+    "output_dct_ranks": [8, 16, 32, 64],
+    "ridge": [0.001, 0.01, 0.1, 1.0, 10.0, 100.0]
+  },
+  "fusion": {"beta_min": -0.5, "beta_max": 1.5, "beta_grid_size": 41, "validation_fraction": 0.6},
+  "selection_metric": "full-horizon validation MSE",
+  "report_metric": "full-horizon test MSE"
+}

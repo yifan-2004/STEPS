@@ -1,0 +1,25 @@
+# Never commit weights, forecasts, datasets, or derived arrays.
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.bin
+*.npy
+*.npz
+*.pkl
+*.pickle
+*.h5
+*.hdf5
+*.onnx
+*.arrow
+*.parquet
+frozen_cache/
+datasets/
+data/
+checkpoints/
+weights/
+results/
+.venv/
+__pycache__/
+.pytest_cache/
+.DS_Store
